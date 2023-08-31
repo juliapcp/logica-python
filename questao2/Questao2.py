@@ -3,13 +3,13 @@ print("Bem-vindo a Sorveteria da Julia Pontes Cardoso Pereira")
 valor_total = 0
 
 while True:  # Loop principal do programa
-    # Entrada do sabor e número de bolas de sorvete
+    # Entrada do sabor do sorvete
     sabor = input("Entre com o sabor desejado (tr/pr/es): ")
     if(sabor not in ['tr', 'pr', 'es']):
         print("“Sabor de Sorvete Inválido")
-        continue
+        continue # Volta ao início do loop
 
-    quantidade = input("Entre com o número de bolas de sorvete desejao (1/2/3): ")
+    quantidade = input("Entre com o número de bolas de sorvete desejado (1/2/3): ")
     
     # Verificação da quantidade de bolas de sorvete
     if quantidade not in ['1', '2', '3']:
@@ -51,6 +51,7 @@ while True:  # Loop principal do programa
     # Pergunta se o cliente quer pedir mais alguma coisa
     continuar = input("Deseja mais algum sorvete? (S/outra tecla): ")
     if continuar.lower() != 's':
+        # Exibe o valor total e encerra o loop principal
         print(f"O valor total a ser pago: R$ {valor_total:.2f}")
         break  # Encerra o loop principal
 
