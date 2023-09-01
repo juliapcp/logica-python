@@ -20,14 +20,28 @@ def consultar_colaborador():
             print("Opção inválida")
             return
         if opcao == 1:  # Consultar todos os colaboradores
-            print(lista_colaboradores)
+            for colaborador in lista_colaboradores:
+                print("Id: " + str(colaborador["id"])) 
+                print("Nome: " + colaborador["nome"])
+                print("Setor: " + colaborador["setor"])
+                print("Pagamento: " + str(colaborador["pagamento"]))
+                print("\n")
         elif opcao == 2:  # Consultar por ID
-            print(lista_colaboradores[int(input("Entre com o id do colaborador: ")) - 1])
+            colaborador = lista_colaboradores[int(input("Entre com o id do colaborador: ")) - 1]
+            print("Id: " + str(colaborador["id"])) 
+            print("Nome: " + colaborador["nome"])
+            print("Setor: " + colaborador["setor"])
+            print("Pagamento: " + str(colaborador["pagamento"]))
+            print("\n")
         elif opcao == 3:  # Consultar por Setor
             setor = input("Entre com o setor: ").lower()
             for colaborador in lista_colaboradores:
                 if colaborador["setor"].lower() == setor:
-                    print(colaborador)
+                    print("Id: " + str(colaborador["id"])) 
+                    print("Nome: " + colaborador["nome"])
+                    print("Setor: " + colaborador["setor"])
+                    print("Pagamento: " + str(colaborador["pagamento"]))
+                    print("\n")
         elif opcao == 4:  # Retornar ao menu
             return            
     except ValueError:
